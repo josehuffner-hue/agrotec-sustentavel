@@ -1,33 +1,47 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f4f8f2;
+:root {
+    --cor-primaria: #1b4332;
+    --cor-secundaria: #40916c;
+    --cor-destaque: #52b788;
+    --cor-fundo-claro: #f0f7f4;
+    --cor-texto: #2d3748;
+    --cor-branco: #ffffff;
 }
 
-header {
-    background: #2e7d32;
-    color: white;
-    text-align: center;
-    padding: 30px;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Poppins', sans-serif; color: var(--cor-texto); background-color: #fafdfb; line-height: 1.6; }
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+.section-padding { padding: 80px 0; }
+.bg-light { background-color: var(--cor-fundo-claro); }
 
-section {
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
-}
+h2 { font-size: 2.5rem; color: var(--cor-primaria); text-align: center; margin-bottom: 15px; font-weight: 700; }
+.subtitle { text-align: center; color: var(--cor-destaque); font-size: 1.1rem; margin-bottom: 50px; text-transform: uppercase; }
 
-.card {
-    background: white;
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,.1);
-}
+header { background-color: var(--cor-branco); position: sticky; top: 0; z-index: 1000; padding: 20px 0; transition: all 0.3s ease; }
+header .container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.6rem; font-weight: 700; color: var(--cor-primaria); }
+.logo span { color: var(--cor-destaque); }
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 25px; }
+nav ul li a { text-decoration: none; color: var(--cor-secundaria); font-weight: 600; }
 
-footer {
-    background: #1b5e20;
-    color: white;
-    text-align: center;
-    padding: 15px;
+.hero { 
+    background: linear-gradient(rgba(27, 67, 50, 0.75), rgba(27, 67, 50, 0.75)), url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+    height: 70vh; display: flex; justify-content: center; align-items: center; text-align: center; color: var(--cor-branco);
+}
+.hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; }
+.btn { display: inline-block; padding: 12px 35px; background-color: var(--cor-destaque); color: #fff; text-decoration: none; border-radius: 30px; font-weight: 600; }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.card { background: #fff; padding: 40px 30px; border-radius: 12px; text-align: center; border-top: 5px solid var(--cor-destaque); box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+
+blockquote { font-style: italic; font-size: 1.4rem; color: var(--cor-secundaria); margin: 30px 0; padding: 15px; border-left: 5px solid var(--cor-destaque); background: var(--cor-fundo-claro); transition: opacity 0.5s ease; }
+
+footer { background-color: var(--cor-primaria); color: #d8f3dc; padding: 30px 0; text-align: center; }
+
+@media (max-width: 768px) {
+    header .container { flex-direction: column; gap: 10px; }
+    .hero-content h1 { font-size: 2.2rem; }
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
 }
